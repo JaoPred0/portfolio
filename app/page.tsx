@@ -116,7 +116,7 @@ export default function Home() {
         <p className="text-gray-400 mb-10">Tem um projeto em mente? Vamos conversar no WhatsApp!</p>
 
         <a
-          href="https://wa.me/5599999999999?text=Olá%2C%20vi%20seu%20portfólio%20e%20gostaria%20de%20falar%20sobre%20um%20projeto!"
+          href="https://wa.me/5567996610494?text=Olá%2C%20vi%20seu%20portfólio%20e%20gostaria%20de%20falar%20sobre%20um%20projeto!"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-green-500 hover:bg-green-600 transition px-6 py-3 rounded-full text-white font-medium shadow-lg hover:scale-105"
