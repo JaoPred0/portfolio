@@ -47,7 +47,7 @@ export default function Home() {
       </nav>
 
       {/* Spline Hero Background */}
-      <div className="relative w-full h-[50vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
+      <div className="relative w-full h-[40vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
         <div className="absolute inset-0">
           <Spline
             scene="https://prod.spline.design/RWW81iBj4ozJuUv6/scene.splinecode"
