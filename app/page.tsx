@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Spline from '@splinetool/react-spline'
 
 export default function Home() {
@@ -8,6 +8,25 @@ export default function Home() {
     projeto2: ['Python', 'HTML', 'CSS', 'Boostrap', 'JavaScript ', 'yt-dlp', 'Flask'],
     projeto3: ['Python', 'Django', 'PostgreSQL'],
   });
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false); // Desativa o carregamento após 2 segundos
+    }, 3000);
+
+    return () => clearTimeout(timer); // Limpa o timer ao desmontar o componente
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+        <div className="text-white text-2xl">Carregando...</div>
+      </div>
+    );
+  }
+
   return (
     <main className="relative min-h-screen text-white">
       {/* Navbar */}
@@ -28,7 +47,7 @@ export default function Home() {
       </nav>
 
       {/* Spline Hero Background */}
-      <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
+      <div className="relative w-full h-[50vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
         <div className="absolute inset-0">
           <Spline
             scene="https://prod.spline.design/RWW81iBj4ozJuUv6/scene.splinecode"
@@ -36,8 +55,6 @@ export default function Home() {
           />
         </div>
       </div>
-
-
 
       {/* Seção de Projetos */}
       <section id="projetos" className="bg-black py-16 px-6">
@@ -107,7 +124,6 @@ export default function Home() {
           Falar no WhatsApp
         </a>
       </section>
-
     </main>
-  )
+  );
 }
