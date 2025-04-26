@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import "tailwindcss";
+@import 'aos/dist/aos.css';
+
+.glow-text {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3),
+        0 0 10px rgba(255, 255, 255, 0.2),
+        0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+* {
+    font-family: "K2D", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+@keyframes fade-in-down {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-down {
+    animation: fade-in-down 0.3s ease-out;
+}
+
+/* From Uiverse.io by adamgiebl */
+body {
+    width: 100%;
+    height: 100%;
+    --color: rgba(53, 53, 53, 0.3);
+    background-color: #000000;
+    background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
+    background-size: 100px 100px;
+}
+
+.words {
+    height: 60px;
+    overflow: hidden;
+    position: relative;
+}
+
+.inner-words {
+    display: flex;
+    flex-direction: column;
+    animation: wordSlide 10s infinite;
+}
+
+.word {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Animação com 5 palavras e pausas de 0.5s entre */
+@keyframes wordSlide {
+    0% {
+        transform: translateY(0%);
+    }
+
+    20% {
+        transform: translateY(-60px);
+    }
+
+    40% {
+        transform: translateY(-120px);
+    }
+
+    60% {
+        transform: translateY(-180px);
+    }
+
+    80% {
+        transform: translateY(-240px);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+/* From Uiverse.io by abrahamcalsin */
+.projeto {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #183153;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+}
+
+.projeto:after {
+    content: " ";
+    width: 0%;
+    height: 100%;
+    background: #ffd401;
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    right: 0;
+}
+
+.projeto:hover::after {
+    right: auto;
+    left: 0;
+    width: 100%;
+}
+
+.projeto span {
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 18px 25px;
+    color: #fff;
+    font-size: 1.125em;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    z-index: 20;
+    transition: all 0.3s ease-in-out;
+}
+
+.projeto:hover span {
+    color: #183153;
+    animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.canvas-container {
+    width: 100%;
+    height: 400px;
+    /* ou outro valor que se ajuste ao seu layout */
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.inner {
+    --w: 100px;
+    --h: 150px;
+    --translateZ: 260px;
+    --rotateX: -15deg;
+    --perspective: 1000px;
+    position: absolute;
+    width: var(--w);
+    height: var(--h);
+    left: calc(50% - (var(--w) / 2));
+    z-index: 2;
+    transform-style: preserve-3d;
+    transform: perspective(var(--perspective));
+    animation: rotating 20s linear infinite;
+}
+
+
+.card3d {
+    position: absolute;
+    border: 2px solid rgba(var(--color-card), 0.7);
+    border-radius: 12px;
+    overflow: hidden;
+    inset: 0;
+    transform: rotateY(calc((360deg / var(--quantity)) * var(--index))) translateZ(var(--translateZ));
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #0000 radial-gradient(circle,
+            rgba(var(--color-card), 0.2) 0%,
+            rgba(var(--color-card), 0.6) 80%,
+            rgba(var(--color-card), 0.9) 100%);
+}
+
+@keyframes rotating {
+    from {
+        transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(0);
+    }
+
+    to {
+        transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(360deg);
+    }
+}
