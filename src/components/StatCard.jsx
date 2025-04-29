@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const StatCard = ({ label, value, suffix = "", duration = 2000 }) => {
+const StatCard = ({ label, value, suffix = "", duration = 1000 }) => {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef();
@@ -69,8 +69,8 @@ export default function StatsSection() {
     <section className="py-10 bg-transparent">
       <div className="flex flex-wrap justify-center gap-10">
         <StatCard value="3" suffix="+" label="Anos de experiência" />
-        <StatCard value="12" suffix="+" label="Clientes satisfeitos" />
-        <StatCard value="5" suffix="+" label="Projetos Concluídos" />
+        <StatCard value="2" suffix="+" label="Clientes satisfeitos" />
+        <StatCard value="3" suffix="+" label="Projetos Concluídos" />
       </div>
     </section>
   );

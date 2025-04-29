@@ -11,11 +11,13 @@ const Experiencias = () => {
         { name: 'JavaScript', image: '/js.png' },
         { name: 'Python', image: '/python.png' },
         { name: 'TypeScript', image: '/typescript.png' },
-        { name: 'Go', image: '/lua.png' },
+        { name: 'Lua', image: '/lua.png' },
         { name: 'React', image: '/react.png' },
         { name: 'Next.js', image: '/next.png' },
         { name: 'Node.js', image: '/node.png' },
         { name: 'Cordova', image: '/cordova.png' },
+        { name: 'Mondgo DB', image: '/mongoBD.png' },
+        { name: 'Firebase', image: '/firebase.png' },
     ];
 
     return (
